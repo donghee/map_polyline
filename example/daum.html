@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>다음지도 polyline</title>
+<style>
+</style>
+</head>
+
+<body>
+<div id="map" style="width:600px;height:500px;"></div>
+<button id="add" onclick='addVertex()'>ADD</button>
+
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<YOUR API KEY>"></script>
+<script type="text/javascript" src="../dist/js/daum_polyline.min.js"></script>
+<script>
+
+var map = new Map('map', 33.450701, 126.570667, 3);
+
+var polyline = new Polyline({
+    map: map,
+    path: [],
+    clickable: true,
+    // editable: true,
+    // endArrow: true,
+    strokeColor: '#5347AA',
+    strokeWeight: 5
+});
+
+function vertexImgURL(nth) {
+    var url = 'img/circle.svg';
+    return url;
+}
+
+function middleImgURL() {
+    var url = 'img/middle.svg';
+    return url;
+}
+
+var infowindow = new daum.maps.InfoWindow({});
+
+function clickVertex(marker) {
+    var iwContent = '<div>';
+    iwContent += marker.getPosition().lng() + "<br>" + marker.getPosition().lat();
+    iwContent += '<br></div>';
+    infowindow.setContent(iwContent);
+    infowindow.setPosition(marker.getPosition());
+
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, marker);
+    }
+}
+
+function addVertex() {
+    polyline.addVertex();
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "polyline",
+  "version": "0.1.0",
+  "description": "Polyline for Daum, Naver and Google Map",
+  "main": "",
+  "scripts": {
+    "build": "gulp default",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "doojin.kang@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doojinkang/polyline.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}
