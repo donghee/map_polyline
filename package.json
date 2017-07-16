@@ -10,7 +10,7 @@
   "author": "doojin.kang@gmail.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/doojinkang/polyline.git"
+    "url": "git://github.com/doojinkang/map_polyline.git"
   },
   "dependencies": {},
   "devDependencies": {

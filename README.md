@@ -16,6 +16,7 @@ Currently Editable Polyline Javascript API provides :
 
 Demo
 -------------------
+To add a vertex, use ADD button below the Map.
 
 * [http://doojinkang.github.io/polyline/example/daum.html](http://doojinkang.github.io/polyline/example/daum.html)
 * [http://doojinkang.github.io/polyline/example/naver.html](http://doojinkang.github.io/polyline/example/naver.html)
