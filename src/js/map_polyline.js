@@ -16,7 +16,7 @@ Polyline.prototype.getAt = function(index) {
 
 Polyline.prototype.addVertex = function() {
     if ( this.getPath().length == 0 ) {
-        var c = map.getCenter();
+        var c = this.getMap().getCenter();
         this.append(c);
     }
     else {
@@ -106,7 +106,7 @@ Polyline.prototype.insertMiddle = function(position, middle_latlng) {
 
 // nth is 0, 1, 2, 3, 4
 Polyline.prototype.newMarker = function(latlng, nth) {
-    var marker = createMarker(map, latlng, true, vertexImage(vertexImgURL(nth + 1), 16));
+    var marker = createMarker(this.getMap(), latlng, true, vertexImage(vertexImgURL(nth + 1), 16));
     console.log('Marker create', nth);
     Event.addListener(marker, "click",
         function() {
@@ -128,7 +128,7 @@ Polyline.prototype.newMarker = function(latlng, nth) {
 
 // nth is 0, 1, 2, 3, 4
 Polyline.prototype.newMiddle = function(latlng, nth) {
-    var middle_marker = createMarker(map, latlng, false, vertexImage(middleImgURL(), 8))
+    var middle_marker = createMarker(this.getMap(), latlng, false, vertexImage(middleImgURL(), 8))
     console.log(' middle create', nth)
     Event.addListener(middle_marker, "click",
         function() {
