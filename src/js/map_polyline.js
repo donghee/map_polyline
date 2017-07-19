@@ -110,11 +110,11 @@ Polyline.prototype.newMarker = function(latlng, nth) {
     console.log('Marker create', nth);
     Event.addListener(marker, "click",
         function() {
-            if (clickVertex) {      // check function exist
+            if (typeof clickVertex === 'function') {      // check function exist
                 return clickVertex(marker);
             }
             else {
-                console.log('function clickVertex(vertex) { } is not implemented');
+                console.error('function clickVertex(vertex) { } is not implemented');
             }
         }.bind(this)
     );
