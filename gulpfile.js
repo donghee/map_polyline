@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var stripDebug = require('gulp-strip-debug');
+var stripDebug = require('gulp-strip-debug-arbitrary');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var webserver = require('gulp-webserver')
@@ -14,7 +14,7 @@ gulp.task('combine-daum', function() {
         'src/js/map_daum.js',
         'src/js/map_polyline.js',
         ])
-        .pipe(stripDebug())
+        .pipe(stripDebug('console', ['error']))
         .pipe(uglify())
         .pipe(concat('daum_polyline.min.js'))
         .pipe(gulp.dest('dist/js'));
